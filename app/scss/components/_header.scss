@@ -1,0 +1,256 @@
+.header {
+  padding: 30px 0;
+  line-height: 1.2;
+  color: #fff;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: background-color 0.3s, padding 0.3s, color 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $silver;
+  }
+
+  &--scroll {
+    background-color: #fff;
+    padding: 18px 0;
+
+    &::before {
+      background-color: $silver-100;
+    }
+
+    .header__link {
+      color: $silver;
+
+      &::before {
+        background-color: $silver;
+      }
+    }
+
+    .header__tel {
+      color: $silver;
+
+      &::before {
+        background-color: $silver;
+      }
+
+      svg {
+        fill: $silver;
+      }
+    }
+
+    .logo__img {
+      display: none;
+
+      &--dark {
+        display: inline-block;
+      }
+
+      &--white {
+        display: inline-block;
+      }
+    }
+
+    .burger {
+
+      &::before,
+      &::after {
+        background-color: $silver;
+      }
+
+      &__row {
+        background-color: $silver;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    margin-left: 100px;
+
+    @include max-w($sm) {
+      position: absolute;
+      background-color: $purple;
+      background-color: #000;
+      margin-left: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: auto;
+      z-index: 1;
+      transform: translateX(200%);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &--active {
+      transform: translateX(0);
+
+      .header__link {
+        color: #fff;
+      }
+    }
+  }
+
+  &__item {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    @include max-w($sm) {
+      margin-right: 0;
+      margin-bottom: 25px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    @include area;
+    color: #fff;
+    transition: color 0.3s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background-color: #fff;
+      transition: width 0.2s ease;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    @include max-w($sm) {
+      display: block;
+      font-size: 20px;
+      font-weight: 300;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &--white {
+      color: $silver;
+
+      &::before {
+        background-color: $silver;
+      }
+    }
+  }
+
+  &__tel {
+    position: relative;
+    padding-left: 24px;
+    letter-spacing: 0.05em;
+    font-size: 18px;
+    @include area;
+    transition: color 0.3s;
+    z-index: 20;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background-color: #fff;
+      transition: width 0.2s ease;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+      transition: fill 0.3s;
+
+      @include max-w($xs) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    @include max-w($sm) {
+      margin-left: auto;
+      margin-right: 70px;
+    }
+
+    @include max-w($xs) {
+      margin-right: 12px;
+      font-size: 16px;
+    }
+
+    &--white {
+      color: $silver;
+
+      &::before {
+        background-color: $silver;
+      }
+
+      svg {
+        fill: $silver;
+      }
+    }
+  }
+
+  &--white {
+    background-color: #fff;
+
+    .burger {
+
+      &::before,
+      &::after {
+        background-color: $silver;
+      }
+
+      &__row {
+        background-color: $silver;
+      }
+    }
+  }
+}

@@ -1,0 +1,234 @@
+.contacts-content {
+  padding: 100px 0;
+
+  @include max-w($md) {
+    padding: 50px 0;
+  }
+
+  &__title {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+
+    @include max-w($md) {
+      margin-bottom: 70px;
+      font-size: 40px;
+    }
+
+    @include max-w($xs) {
+      margin-bottom: 50px;
+      font-size: 30px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+
+    @include max-w($sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__connection {
+    max-width: 515px;
+    width: 100%;
+    margin-right: 220px;
+
+    @include max-w($md) {
+      margin-right: 50px;
+    }
+
+    @include max-w($sm) {
+      max-width: 100%;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__inner-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+
+    @include max-w($sm) {
+      font-size: 24px;
+    }
+
+    @include max-w($xs) {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include max-w($sm) {
+      max-width: 515px;
+    }
+
+    p {
+      font-weight: 300;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-wrap {
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  &__label {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 6px;
+    cursor: text;
+    pointer-events: none;
+    font-size: 16px;
+    font-weight: 300;
+    color: #adadad;
+    transition: font-size 0.4s ease, font-weight 0.4s ease, top 0.4s ease;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 6px 0;
+    border-bottom: 1px solid $silver;
+    color: $purple;
+    font-weight: 300;
+    outline: transparent;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: $purple;
+
+      &~.contacts-content__label {
+        font-size: 13px;
+        font-weight: 400;
+        top: -12px;
+      }
+    }
+
+    &:not(:placeholder-shown)~.contacts-content__label {
+      font-size: 13px;
+      font-weight: 400;
+      top: -12px;
+    }
+  }
+
+  &__button-wrap {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    @include max-w($xs) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__btn {
+    color: #fff;
+    background-color: #393246;
+    padding: 16px 40px 14px 40px;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-right: 35px;
+    border: 1px solid transparent;
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+
+    @include max-w($xs) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: $purple;
+      border-color: $purple;
+    }
+  }
+
+  &__button-text {
+    font-size: 13px;
+    max-width: 230px;
+
+    @include max-w($xs) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__button-link {
+    color: $purple;
+    border-bottom: 1px solid $purple;
+  }
+
+  &__address {
+    max-width: 260px;
+    width: 100%;
+
+    @include max-w($sm) {
+      max-width: 475px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include max-w($sm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding-left: 42px;
+    position: relative;
+    margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 300;
+
+    @include max-w($sm) {
+      width: 50%;
+    }
+
+    @include max-w($xs) {
+      width: 100%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 22px;
+      height: 22px;
+      fill: $purple;
+    }
+  }
+
+  &__item-link {
+    @include area;
+
+    &--email {
+      font-weight: 400;
+      border-bottom: 1px solid $silver;
+    }
+  }
+}

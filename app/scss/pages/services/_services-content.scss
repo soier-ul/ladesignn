@@ -1,0 +1,117 @@
+.services-content {
+  padding: 50px 0 100px;
+
+  @include max-w($md) {
+    padding: 25px 0 50px;
+  }
+
+  &__title {
+    font-size: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+
+    @include max-w($sm) {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__cards {
+    margin-bottom: 100px;
+
+    @include max-w($md) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    @include max-w($sm) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    margin-right: 30px;
+
+    @include max-w($sm) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--mobile {
+      display: none;
+
+      @include max-w($sm) {
+        display: flex;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__btn-box {
+    position: relative;
+  }
+
+  &__btn {
+    line-height: 1.2;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $purple;
+    padding-right: 40px;
+    @include area;
+  }
+
+  &__btn-arrow {
+    position: absolute;
+    right: 0;
+    top: -2px;
+    z-index: -1;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $silver-100;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 18px;
+      height: 8px;
+      color: $silver;
+      transform: rotate(-90deg);
+      transition: transform 0.5s;
+    }
+
+    &--active {
+      svg {
+        transform: rotate(450deg);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+  }
+}

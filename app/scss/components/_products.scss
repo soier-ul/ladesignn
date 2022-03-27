@@ -1,0 +1,114 @@
+.products {
+  padding: 50px 0 100px;
+
+  @include max-w($md) {
+    padding: 50px 0;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    @include max-w($sm) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 120px;
+
+    @include max-w($lg) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 40px;
+
+    @include max-w($sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include max-w($sm) {
+      grid-template-columns: 1fr;
+    }
+
+    @include max-w($xs) {
+      display: flex;
+      flex-direction: column;
+      grid-gap: unset;
+      grid-template-columns: unset;
+    }
+  }
+
+  &__item {
+    @include max-w($xs) {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item:nth-child(1) {
+    grid-row: span 2;
+
+    @include max-w($xs) {
+      grid-row: unset;
+    }
+  }
+
+  &__item:nth-child(6) {
+    grid-column: span 2;
+    grid-row: span 2;
+
+    @include max-w($xs) {
+      grid-row: unset;
+      grid-column: unset;
+    }
+  }
+
+  &__item:nth-child(7) {
+    grid-column: span 2;
+
+    @include max-w($xs) {
+      grid-column: unset;
+    }
+  }
+
+  &__item:nth-child(10) {
+    grid-column: span 2;
+
+    @include max-w($xs) {
+      grid-column: unset;
+    }
+  }
+
+  &__btn {
+    line-height: 1.2;
+    font-size: 14px;
+    color: $purple;
+    letter-spacing: 0.15em;
+    padding: 16px 40px 14px 40px;
+    text-transform: uppercase;
+    border: 1px solid $purple;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $purple;
+      color: #fff;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+  }
+}
